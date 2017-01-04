@@ -12,17 +12,17 @@ var port = process.env.PORT || 8080;
 
 
 app.get('/api', function (req, res) {
-    var deviceId = req.param('deviceId');
-    var latitude = req.param('lat');
-    var longitude = req.param('lng');
+    var deviceId = req.param('d');
+    var latitude = req.param('a');
+    var longitude = req.param('n');
     updateDB(deviceId, longitude, latitude);
     res.send(deviceId + ' ' + longitude + ' ' + latitude);
 });
 
 app.post('/api', function (req, res) {
-    var deviceId = req.body.deviceId;
-    var latitude = req.body.lat;
-    var longitude = req.body.lng;
+    var deviceId = req.body.d;
+    var latitude = req.body.a;
+    var longitude = req.body.n;
     updateDB(deviceId, longitude, latitude);
     res.send(deviceId + ' ' + longitude + ' ' + latitude);
 });
