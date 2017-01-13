@@ -2,9 +2,9 @@
  * Created by Digz on 02/01/2017.
  */
 
-var express = require('express');
+var express = require('express'); //For accessing GET and POST request and making your app a server
 var app = express();
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'); //For interpreting POST request
 const path = require('path');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,7 +27,7 @@ app.post('/api', function (req, res) {
     res.send(deviceId + ' ' + longitude + ' ' + latitude);
 });
 
-var admin = require("firebase-admin");
+var admin = require("firebase-admin");//For  accessing firebase database + auth
 
 var serviceAccount = require('./json/adminsdk');
 admin.initializeApp({
